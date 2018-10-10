@@ -59,7 +59,6 @@ def parseModules(modules):
 
 stock_name = sys.argv[1]
 url='https://www.reuters.com/finance/stocks/financial-highlights/'
-headerData = parseModules(getModulesFromHeader(getSoupFromUrl(url,stock_name)))
 dataDict = {**parseModules(getModulesFromHeader(getSoupFromUrl(url,stock_name))), **parseModules(getModulesFromColumns(getSoupFromUrl(url,stock_name)))}
 
 print(stock_name+' Sales in Q4 18 : ')
