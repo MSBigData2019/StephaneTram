@@ -57,18 +57,27 @@ def parseModules(modules):
                     dataTable[dataLineName]=rowData
     return dataTable
 
-stock_name = sys.argv[1]
-url='https://www.reuters.com/finance/stocks/financial-highlights/'
-dataDict = {**parseModules(getModulesFromHeader(getSoupFromUrl(url,stock_name))), **parseModules(getModulesFromColumns(getSoupFromUrl(url,stock_name)))}
+def launch_requests(stock_name):
+    url='https://www.reuters.com/finance/stocks/financial-highlights/'
+    soup = getSoupFromUrl(url,stock_name)
+    dataDict = {**parseModules(getModulesFromHeader(soup)), **parseModules(getModulesFromColumns(soup))}
+    return dataDict
 
-print(stock_name+' Sales in Q4 18 : ')
-print(dataDict['Quarter Ending Dec-18'])
-print(stock_name+' Stock price : ')
-print(dataDict['spot price'])
-print(stock_name+' Stock change : ')
-print(dataDict['spot change'])
-print(stock_name+' % Shares Owned : ')
-print(dataDict['% Shares Owned:'])
-print(stock_name+' Div Yield : ')
-print(dataDict['Dividend Yield'])
+if len(sys.argv) <2:
+    stocks = ['LVMH.PA','DANO.PA','AIR.PA']
+else:
+    stocks=sys.argv[1].split(',')
+
+for x in stocks:
+    dataDict = launch_requests(x)
+    print(x+' Sales in Q4 18 : ')
+    print(dataDict['Quarter Ending Dec-18'])
+    print(x+' Stock price : ')
+    print(dataDict['spot price'])
+    print(x+' Stock change : ')
+    print(dataDict['spot change'])
+    print(x+' % Shares Owned : ')
+    print(dataDict['% Shares Owned:'])
+    print(x+' Div Yield : ')
+    print(dataDict['Dividend Yield'])
 
