@@ -31,14 +31,14 @@ def addUserStarCount(userNames):
                     userList[userName] = [x['stargazers_count']]
     return userList
 
+## Il faut passer le token en argument de l'appel du fichier
+
 tokenString = sys.argv[1]
 print(tokenString)
 header = {'Authorization':'token ' + tokenString}
 soup = getSoupFromUrl('https://gist.github.com/paulmillr/2657075')
 nameList = getUserNames(soup)
 userList = addUserStarCount(nameList)
-
-#print(sorted(userList,key = lambda x: x[1], reverse=True))
 
 print(sorted([(i,sum(userList[i])/len(userList[i])) for i in userList.keys()], key=lambda x : x[1], reverse=True))
 
