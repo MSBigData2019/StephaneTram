@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import json
-import _thread
+import sys
 
 def getSoupFromUrl(url):
     res=requests.get(url)
@@ -31,7 +31,9 @@ def addUserStarCount(userNames):
                     userList[userName] = [x['stargazers_count']]
     return userList
 
-header = {'Authorization':'token c7c1dc0643c7e4ae9178e46efad7667e5ffdbbfd'}
+tokenString = sys.argv[1]
+print(tokenString)
+header = {'Authorization':'token ' + tokenString}
 soup = getSoupFromUrl('https://gist.github.com/paulmillr/2657075')
 nameList = getUserNames(soup)
 userList = addUserStarCount(nameList)
