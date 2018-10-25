@@ -1,5 +1,6 @@
 import pandas as pd
 import requests
+import re
 
 req = requests.get('https://www.open-medicaments.fr/api/v1/medicaments?query=paracetamol')
 medList = req.json()
@@ -12,6 +13,7 @@ for med in medList:
     denom = medProp['denomination']
     forme = medProp['formePharmaceutique']
     dosage = medProp['compositions'][0]['substancesActives'][0]['dosageSubstance']
+    dosage2 = re.findall(r'([\w,.]+) (\w+)',dosage)
 
 
 
