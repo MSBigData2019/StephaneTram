@@ -1,0 +1,11 @@
+python3 generate-json-mentions.py 071-mentions.csv mentions-header.txt mentions-json-cols.txt
+python3 generate-json-mentions.py 072-mentions.csv mentions-header.txt mentions-json-cols.txt
+python3 generate-json-mentions.py 073-mentions.csv mentions-header.txt mentions-json-cols.txt
+python3 generate-json-mentions.py 080-mentions.csv mentions-header.txt mentions-json-cols.txt
+python3 generate-json-mentions.py 081-mentions.csv mentions-header.txt mentions-json-cols.txt
+python3 generate-json-mentions.py 082-mentions.csv mentions-header.txt mentions-json-cols.txt
+python3 generate-json-mentions.py 083-mentions.csv mentions-header.txt mentions-json-cols.txt
+python3 generate-json-mentions.py 090-mentions.csv mentions-header.txt mentions-json-cols.txt
+python3 generate-json-mentions.py 091-mentions.csv mentions-header.txt mentions-json-cols.txt
+python3 generate-json-mentions.py 092-mentions.csv mentions-header.txt mentions-json-cols.txt
+python3 generate-json-mentions.py 093-mentions.csv mentions-header.txt mentions-json-cols.txt

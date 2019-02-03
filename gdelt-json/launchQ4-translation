@@ -1,0 +1,12 @@
+python3 generate-json.py 100-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 101-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 102-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 103-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 110-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 111-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 112-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 113-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 120-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 121-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 122-translation.csv events-header.txt events-json-cols.txt
+python3 generate-json.py 123-translation.csv events-header.txt events-json-cols.txt
